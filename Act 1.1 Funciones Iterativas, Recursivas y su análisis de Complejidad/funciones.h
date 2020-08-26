@@ -2,7 +2,7 @@
  * funciones.cpp
  *
  *  Created on: 26/08/2020
- *      Author: David Guzm·n Leyva
+ *      Author: David Guzm√°n Leyva
  *      Matricula: A01706417
  */
 
@@ -12,24 +12,24 @@
 class Funciones{
 public:
     Funciones(){};
-    long int sumaIterativa(long int num);
-    long int sumaRecursiva(long int num);
-    long int sumaDirecta(long int num);
+    long int sumaIterativa(long int n);
+    long int sumaRecursiva(long int n);
+    long int sumaDirecta(long int n);
 };
 
-long int Funciones::sumaIterativa(long int num) {
+long int Funciones::sumaIterativa(long int n) {
   long int sum = 0;
-  for(long int i = 1; i <= num; i++){
+  for(long int i = 1; i <= n; i++){
     sum = sum + i;
   }
 	return sum;
 }
 
-long int Funciones::sumaRecursiva(long int num) {
-  if (num > 1){
-    return num + sumaRecursiva(num - 1);
+long int Funciones::sumaRecursiva(long int n) {
+  if (n > 1){
+    return n + sumaRecursiva(n - 1);
   }
-  else if(num == 1){
+  else if(n == 1){
     return 1;
   }
   else{
@@ -37,9 +37,9 @@ long int Funciones::sumaRecursiva(long int num) {
   }
 }
 
-long int Funciones::sumaDirecta(long int num) {
+long int Funciones::sumaDirecta(long int n) {
   long int sum = 0;
-  sum = ( num * (num + 1) )/2;
+  sum = ( n * (n + 1) )/2;
   return sum;
 }
 
