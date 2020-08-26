@@ -1,6 +1,6 @@
 #sumaIterativa
 **Análisis de complejidad temporal**
-El algoritmo recorre n pasos ya que usa un ciclo for que va de i = 1 hatsa n y sumara i a la acumulacion del mismo a medida que corre el ciclo, por lo que su complejidad temporal es O(n) o lineal para el peor de los casos.
+El algoritmo recorre n pasos ya que usa un ciclo for que va de i = 1 hasta n y sumara i a la acumulacion del mismo a medida que corre el ciclo, por lo que su complejidad temporal es O(n) o lineal para el peor de los casos.
 
 #sumaRecursiva
 **Análisis de complejidad temporal**
