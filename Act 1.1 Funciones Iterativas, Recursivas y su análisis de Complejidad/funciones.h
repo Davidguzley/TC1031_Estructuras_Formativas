@@ -1,5 +1,5 @@
 /*
- * funciones.cpp
+ * funciones.h
  *
  *  Created on: 26/08/2020
  *      Author: David Guzmán Leyva
