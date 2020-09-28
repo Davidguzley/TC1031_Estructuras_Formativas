@@ -9,7 +9,7 @@ por lo que su complejidad temporal es O(n) o lineal para el peor de los casos de
 ### Análisis de complejidad temporal
 El algoritmo recorre n pasos, ya que recibe como parametro un valor entero como indice, el cual es buscado mediante un while que recorre la lista hasta hallar su posicion dentro de la lista,
 se remuve el elemento contenido en esa posicion y se acomoda la lista.
-La funcion removeFirst es utilizada en caso de que el indice sea cero, se remuve el unico elemento contenido en la lista o se arroja un aviso en caso de estar ya vacia.
+La funcion removeFirst es utilizada en caso de que el indice sea cero, se remuve el primer elemento contenido en la lista o se arroja un aviso en caso de estar ya vacia.
 Con esto podemos decir qu la complejidad temporal del algoritmo es O(n) o lineal para el peor de los casos debido a la complejidad O(n) del ciclo y la complejidad O(1) de la funcion removeFirst.
 
 # update
