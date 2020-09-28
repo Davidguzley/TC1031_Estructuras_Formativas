@@ -1,7 +1,7 @@
 # add
 ### Análisis de complejidad temporal
 El algoritmo simplemente verfica con un if si la lista esta vacia o no, si esta vacia dentro del if se añade el valor pasado como paramatro de la funcion y se le asigna el head y el tail,
-en caso de contar con elementos en la lista dentro de un else se acomodara el valor pasado como parametro de la funcion al final de la lista respetando la estructura de la misma.
+en caso de contar con elementos en la lista dentro de un else se acomodara el valor pasado como parametro de la funcion al final de la lista, respetando la estructura de la misma.
 Por lo tanto su complejidad temporal es O(1) o dicho de otro modo constante para el peor de los casos, puesto que solo le toma un paso al algoritmo conseguir añadir elementos a la lista.
 
 # remove
