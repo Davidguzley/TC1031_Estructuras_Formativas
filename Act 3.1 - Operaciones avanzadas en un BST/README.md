@@ -1,21 +1,14 @@
 # Análisis de complejidad temporal
 
 ## visit
-El algoritmo simplemente verfica con un if si la lista esta vacia o no, si esta vacia dentro del if se añade el valor pasado como paramatro de la funcion y se le asigna el head y el tail,
-en caso de contar con elementos en la lista dentro de un else se acomodara el valor pasado como parametro de la funcion al final de la lista, respetando la estructura de la misma.
-Por lo tanto su complejidad temporal es O(1) o dicho de otro modo constante para el peor de los casos, puesto que solo le siempre los mismos pasos al algoritmo añadir un elemento a la lista.
+El algoritmo recorre n pasos, ya solo ordena los datos dentro de un string con los cuatro recorridos de las funciones preorder(), postorder(), inorder() y levelorder() separados por un salto de linea. Cada funcion utiliza recursion implementada mediante ifs para recorrer todos los elementos del arbol sin utilizar algun tipo de ciclo for o while, por lo que su complejidad temporal es O(n) o lineal para el peor de los casos.
 
 ## height
-El algoritmo recorre n pasos, ya que recibe como parametro un valor entero de indice, el cual es buscado mediante un while que recorre la lista hasta hallar su posicion dentro de la lista,
-se remueve el elemento de la lista en base en donde se encuentre el indice, es decir si esta en una posicion de en medio o al final de la lista y se acomodan los demas.
-La funcion removeFirst es utilizada en caso de que el indice sea cero, arroja un aviso en caso de estar ya vacia, si el head y el tail son iguales entonces la lista se vulve vacia y si no entonces se remueve el primer elemento de la lista y se acomodan los demas.
-Con esto podemos decir qu la complejidad temporal del algoritmo es O(n) o lineal para el peor de los casos debido a la complejidad O(n) del ciclo while y la complejidad O(1) de la funcion removeFirst.
+El algoritmo recorre n pasos, ya que accede a cada una de las ramas del arbol (izquierdas, derechas) mediante recursion implementada con ifs, sumando 1 en cada nivel y cada lado en el que se encuentre del arbol (leftLevel,rightLevel), hallando el nivel mas alto es como se obtiene la altura del arbol.
+Debido a la anterior su complejidad tenporal es O(n) o lineal para el peor de los casos.
 
 ## ancestors
-El algoritmo recorre n pasos, ya que recibe como parametro un indice y un valor, este indice es buscado mediante un while que recorre la lista hasta hallar su posicion dentro de la lista,
-se actualiza el elemento contenido en esa posicion por el valor pasado como parametro de la funcion,
-por lo que su complejidad temporal es O(n) o lineal para el peor de los casos debido a que solo se recorre n elementos de la lista.
+El algoritmo recorre n pasos, ya que recibe como parametro un valor del arbol valido, el cual mediante recursion implementada con ifs accedera al arbol para encontrar todos los nodos que esten arriba del que fue pasaddo como parametro hasta llegar a la raiz y desplegara cada uno de ellos dentro de un string, por lo que su comlejidad temporal es O(n) o lineal para el peor de los casos.
 
 ## whatlevelamI
-El algoritmo busca la posicion de un numero dentro de una lista recorriendo n pasos, ya que usa un ciclo while que que recorre la lista hasta hallar su posicion,
-devolviendo su numero de posicion o -1 si no se ha encontrado, por lo que su complejidad temporal es O(n) o lineal para el peor de los casos debido a que solo se recorre n elementos de la lista.
+El algoritmo busca el nivel en el que se encuentra un dato dentro de un arbol recorriendo n pasos, ya que usa recursion implementada mediante ifs que recorren el arbol para devolver su nivel o en caso de que no encontralo devolver -1, por lo que su complejidad temporal es O(n) o lineal para el peor de los casos.
