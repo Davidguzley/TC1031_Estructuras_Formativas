@@ -1,12 +1,12 @@
 # Análisis de complejidad temporal
 
 ## push
-El algoritmo recibe como parametro un valor T para ser agregado a la fila priorizada, haciendo uso de un ciclo while el permitira que cada valor que se quiera insertar sea de izquierda a derecha y por niveles en el arbol, checando que los hijo siempre sean mas chico que su padre, por lo que su complejidad temporal es O(log n), es decir, logaritmica, para el peor de los casos.
+El algoritmo recibe como parametro un valor T para ser agregado a la fila priorizada, haciendo uso de un ciclo while cada valor que se quiera insertar sera de izquierda a derecha y por niveles en el arbol, checando que el hijo siempre sean mas chico que su padre, por lo que su complejidad temporal es O(log n), es decir, logaritmica, para el peor de los casos.
 
 ## pop
 El algoritmo remueve la raiz del arbol data[0] y
 ordena de nuevo el arbol con el uso de heapify() para signar sus respectivos hijos a cada valor, por lo que su complejidad temporal es O(log n) o logaritmica para el peor
-de los casos por el uso de esta funcion, ya que si solo se removiera el elemento entonces estariamos hablando que su complejidad seria de O(1) o constante para el peor de los casos porque siempre removeria el valor de dicha posicion.
+de los casos por el uso de esta funcion, pero si solo se removiera el elemento entonces estariamos hablando que su complejidad seria de O(1) o constante para el peor de los casos porque siempre removeria el valor de dicha posicion.
 
 ## top
 El algoritmo únicamente obtiene del arreglo data su primer valor el cual es la raíz del árbol, como estas instruccion siempre es la misma para todos los casos su complejidad temporal es O(1) o constante para el peor de los casos.
