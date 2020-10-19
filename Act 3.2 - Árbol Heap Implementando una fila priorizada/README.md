@@ -1,16 +1,20 @@
 # Análisis de complejidad temporal
 
 ## push
-El algoritmo recorre n pasos, ya solo ordena los datos dentro de un string con los cuatro recorridos de las funciones preorder(), postorder(), inorder() y levelorder() separados por un salto de linea. Cada funcion utiliza recursion implementada mediante ifs para recorrer todos los elementos del arbol sin utilizar algun tipo de ciclo for o while, por lo que su complejidad temporal es O(n) o lineal para el peor de los casos.
+El algoritmo recibe como parametro un valor T para ser agregado a la fila priorizada, haciendo uso de un ciclo while el permitira que cada valor que se quiera insertar sea de izquierda a derecha y por niveles en el arbol, checando que los hijo siempre sean mas chico que su padre, por lo que su complejidad temporal es O(log n), es decir, logaritmica, para el peor de los casos.
 
 ## pop
-El algoritmo recorre n pasos, ya que accede a cada una de las ramas del arbol (izquierdas, derechas) mediante recursion implementada con ifs, sumando 1 en cada nivel y cada lado en el que se encuentre del arbol (leftLevel,rightLevel), hallando el nivel mas alto es como se obtiene la altura del arbol.
-Debido a la anterior su complejidad tenporal es O(n) o lineal para el peor de los casos.
+El algoritmo remueve la raiz del arbol data[0] y
+ordena de nuevo el arbol con el uso de heapify() para signar sus respectivos hijos a cada valor, por lo que su complejidad temporal es O(log n) o logaritmica para el peor
+de los casos por el uso de esta funcion, ya que si solo se removiera el elemento entonces estariamos hablando que su complejidad seria de O(1) o constante para el peor de los casos porque siempre removeria el valor de dicha posicion.
 
 ## top
-El algoritmo recorre n pasos, ya que recibe como parametro un valor del arbol valido, el cual mediante recursion implementada con ifs accedera al arbol para encontrar todos los nodos que esten arriba del que fue pasaddo como parametro hasta llegar a la raiz y desplegara cada uno de ellos dentro de un string, por lo que su comlejidad temporal es O(n) o lineal para el peor de los casos.
+El algoritmo únicamente obtiene del arreglo data su primer valor el cual es la raíz del árbol, como estas instruccion siempre es la misma para todos los casos su complejidad temporal es O(1) o constante para el peor de los casos.
 
 ## empty
-El algoritmo busca el nivel en el que se encuentra un dato dentro de un arbol recorriendo n pasos, ya que usa recursion implementada mediante ifs que recorren el arbol para devolver su nivel o en caso de que no encontralo devolver -1, por lo que su complejidad temporal es O(n) o lineal para el peor de los casos.
+El algoritmo simplemente checa si el atributo count es igual a cero, entonces develve un valor boleano que dice si la fila priorizada esta vacía o tiene datos, por lo tanto como siempre solo se va ha checar este atributo su
+complejidad temporal es O(1) o constante para el peor de los casos.
 
 ## size
+El algoritmo solamente devuelve el valor del atributo count la cual contiene la cantidad actual de datos almacenados, por lo que al ser siempre una simple consulta de una variable
+su copomplejidad temporal es O(1) o constante para el peor de los casos.
