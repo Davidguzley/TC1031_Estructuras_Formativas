@@ -1,20 +1,16 @@
 # Análisis de complejidad temporal
 
 ## add
-El algoritmo recibe como parametro un valor T para ser agregado a la fila priorizada, haciendo uso de un ciclo while cada valor que se quiera insertar sera de izquierda a derecha y por niveles en el arbol, checando que el hijo siempre sean mas chico que su padre, por lo que su complejidad temporal es O(log n), es decir, logaritmica, para el peor de los casos.
+El algoritmo presentado funciona mediante una serie de llamadas de dos funciones, la primera es la adición de un nodo, el cual servirá para conectar el valor al árbol, la función mencionada ordena el valor y posiciona el nodo según el valor que representa y si es menor o mayor que los otros valores encontrados en el árbol, por otro lado, la segunda función se encarga de hacer un "ordenamiento", de tal manera que el valor recientemente agregado sea el root, es decir, el valor encontrado en el primer nivel, y todos los demás valores sean comparados con él para realizar el árbol y ordenar los nodos y valores, la complejidad temporal que presenta es de tiempo lineal, ó O(n) para el peor de los casos.
 
 ## remove
-El algoritmo remueve la raiz del arbol data[0] y
-ordena de nuevo el arbol con el uso de heapify() para signar sus respectivos hijos a cada valor, por lo que su complejidad temporal es O(log n) o logaritmica para el peor
-de los casos por el uso de esta funcion, pero si solo se removiera el elemento entonces estariamos hablando que su complejidad seria de O(1) o constante para el peor de los casos porque siempre removeria el valor de dicha posicion.
+El algoritmo presentado funciona mediante una serie de condicionales, donde, a partir del valor a remover, se le asignará instrucciones para ser el root del árbol, entonces, se removerá del árbol y se asignará el sucesor del número borrado como el nuevo root del ábol, la complejidad temporal que presenta es de tiempo lineal, ó O(n) para el peor de los casos.
 
 ## find
-El algoritmo únicamente obtiene del arreglo data su primer valor el cual es la raíz del árbol, como esta instruccion siempre es la misma para todos los casos su complejidad temporal es O(1) o constante para el peor de los casos.
+El algoritmo presentado en una serie de llamadas recursivas de la misma función hasta encontrar el valor deseado, si no se encuentra un valor regresará un false, cuando se encuentra el valor deseado se planteará asignar el valor buscado como el nuevo root y se realizará un ordenamiento de los valores de acuerdo al valor buscado(funcion splay), la complejidad temporal que presenta es de tiempo lineal, ó O(n) para el peor de los casos.
 
 ## inorder
-El algoritmo simplemente checa si el atributo count es igual a cero, entonces develve un valor boleano que dice si la fila priorizada esta vacía o tiene datos, por lo tanto como siempre solo se va ha checar este atributo su
-complejidad temporal es O(1) o constante para el peor de los casos.
+El algoritmo presentado funciona mediante una serie de llamadas recursivas de la misma función para obtener los valores encontrados en el árbol mientras no esté vacío, y comenzando de la ráiz y los valores menores, los valores estarán dilimitados por corchetes ( [ ] ), la complejidad temporal que presenta es de tiempo lineal, ó O(n) para el peor de los casos.
 
 ## size
-El algoritmo solamente devuelve el valor del atributo count el cual contiene la cantidad actual de datos almacenados, por lo que al ser siempre una simple consulta de una variable
-su copomplejidad temporal es O(1) o constante para el peor de los casos.
+El algoritmo presentado funciona mediante una serie de condicionales para aumentar o disminuir el tamaño de valores que se encuentran en el árbol según el uso de las funciones(add, remove, removeAll), la complejidad temporal que presenta es de tiempo constante, ó O(1) para el peor de los casos.
