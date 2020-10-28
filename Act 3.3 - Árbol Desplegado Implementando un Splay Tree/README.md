@@ -1,16 +1,16 @@
 # Análisis de complejidad temporal
 
 ## add
-El algoritmo presentado funciona mediante una serie de llamadas de dos funciones, la primera es la adición de un nodo, el cual servirá para conectar el valor al árbol, la función mencionada ordena el valor y posiciona el nodo según el valor que representa y si es menor o mayor que los otros valores encontrados en el árbol, por otro lado, la segunda función se encarga de hacer un "ordenamiento", de tal manera que el valor recientemente agregado sea el root, es decir, el valor encontrado en el primer nivel, y todos los demás valores sean comparados con él para realizar el árbol y ordenar los nodos y valores, la complejidad temporal que presenta es de tiempo lineal, ó O(n) para el peor de los casos.
+El algoritmo le toma n pasos agregar un dato al splay tree debido a que utiliza dos funciones cuando el arbol no se encuentra vacio, la primera conecta el valor pasado como parametro de la funcion principal al arbol para pocisicionarlo en su debido sitio y la segunda (splay()) ordena el arbol con el nuevo valor como su raiz para que los demas valores se comparen en base a este, por lo que su complejidad temporal es O(n) o lineal para el peor de los casos.
 
 ## remove
-El algoritmo presentado funciona mediante una serie de condicionales, donde, a partir del valor a remover, se le asignará instrucciones para ser el root del árbol, entonces, se removerá del árbol y se asignará el sucesor del número borrado como el nuevo root del ábol, la complejidad temporal que presenta es de tiempo lineal, ó O(n) para el peor de los casos.
+El algoritmo recorre n pasos para eliminar un dato del splay tree, debido a que emplea una serie de ifs para remover el valor pasado como parametro de la funcion poniendolo en la pocision de la raiz y removiendolo, para posteriormente poner como nueva raiz su sucesor, por lo que su complejidad temporal es O(n) o lineal para el peor de los casos.
 
 ## find
-El algoritmo presentado en una serie de llamadas recursivas de la misma función hasta encontrar el valor deseado, si no se encuentra un valor regresará un false, cuando se encuentra el valor deseado se planteará asignar el valor buscado como el nuevo root y se realizará un ordenamiento de los valores de acuerdo al valor buscado(funcion splay), la complejidad temporal que presenta es de tiempo lineal, ó O(n) para el peor de los casos.
+El algoritmo recorre n pasos para encontrar un valor entero pasado como parametro de la funcion y devolver un boleeano que representa si el dato se encontro o no, debido a que emplea ifs de manera recursiva, si este es encontrado pasara a ser la nueva raiz y mediante una funcion (splay()) se ordenara el arbol en base al valor encontrado, por lo que su complejidad temporal es O(n) o lineal para el peor de los casos.
 
 ## inorder
-El algoritmo presentado funciona mediante una serie de llamadas recursivas de la misma función para obtener los valores encontrados en el árbol mientras no esté vacío, y comenzando de la ráiz y los valores menores, los valores estarán dilimitados por corchetes ( [ ] ), la complejidad temporal que presenta es de tiempo lineal, ó O(n) para el peor de los casos.
+El algoritmo recorre n pasos para desplegar en inrorder el contenido del Splay Tree en un string, debido a que emplea ifs de manera recursiva hasta haber recorrrido y almacendo todo el contenido del arbol, por lo que su complejidad temporal es O(n) o lineal para el peor de los casos.
 
 ## size
-El algoritmo presentado funciona mediante una serie de condicionales para aumentar o disminuir el tamaño de valores que se encuentran en el árbol según el uso de las funciones(add, remove, removeAll), la complejidad temporal que presenta es de tiempo constante, ó O(1) para el peor de los casos.
+El algoritmo solamente le toma un paso devolver un valor entero que representa la cantidad de datos o valores que tiene el arbol actualmente, por lo que su complejidad temporal es O(1) o constante para el peor de los casos.
