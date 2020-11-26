@@ -1,7 +1,7 @@
 /*
- * hash.h
+ * chain.h
  *
- *  Created on: 19/11/2020
+ *  Created on: 26/11/2020
  *      Author: David Guzman
  */
 
