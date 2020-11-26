@@ -1,7 +1,7 @@
 /*
- * hash.h
+ * quadratic.h
  *
- *  Created on: 19/11/2020
+ *  Created on: 26/11/2020
  *      Author: David Guzman
  */
 
@@ -31,10 +31,9 @@ public:
 	Quadratic(unsigned int, Key, unsigned int (*f) (const Key));
 	~Quadratic();
 	bool full() const;
-	void put(Key, Value);
+	bool put(Key, Value);
 	bool contains(const Key) const;
 	Value get(const Key);
-	void clear();
 	string toString() const;
 };
 
@@ -80,40 +79,38 @@ bool Quadratic<Key, Value>::full() const {
 template <class Key, class Value>
 long Quadratic<Key, Value>::indexOf(const Key k) const {
 	unsigned int i, start;
-
+  
 	start = i = func(k) % size;
-	do {
-		if (keys[i] == k) {
+	for(int j = 0; j<size; j++){
+		if(keys[i] == k){
 			return i;
 		}
-		i = (i + 1) % size;
-	} while (start != i);
+		i = (start +j*j) % size;
+	}
 	return -1;
 }
 
 template <class Key, class Value>
-void Quadratic<Key, Value>::put(Key k, Value v) {
-	unsigned int i, start;
+bool Quadratic<Key, Value>::put(Key k, Value v) {
+	unsigned i, start;
 	long pos;
-
-	if (full()) {
-		cout<<"No hay espacio"<<endl;
-	}
-
 	pos = indexOf(k);
-	if (pos != -1) {
+
+	if(pos != -1){
 		values[pos] = v;
+		return true;
 	}
 
 	start = i = func(k) % size;
-	do {
-		if (keys[i] == initialValue) {
+	for(int j = 0; j<size; j++){
+		if (keys[i] == initialValue){
 			keys[i] = k;
 			values[i] = v;
-			count++;
+			return true;
 		}
-		i = (i + 1) % size;
-	} while (start != i);
+		i = (start + j*j) % size;
+	}
+	return false;
 }
 
 template <class Key, class Value>
@@ -121,6 +118,7 @@ bool Quadratic<Key, Value>::contains(const Key k) const {
 	long pos;
 
 	pos = indexOf(k);
+
 	return (pos != -1);
 }
 
@@ -136,14 +134,6 @@ Value Quadratic<Key, Value>::get(const Key k) {
 	else{
     cout<<"llave incorrecta"<<endl;
   };
-}
-
-template <class Key, class Value>
-void Quadratic<Key, Value>::clear() {
-	count = 0;
-	for (unsigned int i = 0; i < size; i++) {
-		keys[i] = initialValue;
-	}
 }
 
 template <class Key, class Value>
