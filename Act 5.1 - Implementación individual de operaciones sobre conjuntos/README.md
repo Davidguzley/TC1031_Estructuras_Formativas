@@ -1,6 +1,9 @@
 # Análisis de complejidad temporal
 
 ## chain.h
-
 ### put
-El algoritmo varia su complejidad, ya que utiliza condicionales para determinar la accion que se llevara acabo. Gracias a la funcion indexOf() se puede saber el indice o pocision de la llave, por lo que si el vector keys no tiene nada en esa posicion agrega la llave y el vector en sus correspondientes vectores y en caso de que no un ciclo for verificara si la llave ya existe para solo agregarle mas valores a la misma. Por lo que su complejidad temporal para el peor de los casos es O(n) o lineal ya que se debe comparar la llave con todas las llaves de la tabla hash, pero para el mejor de los casos su complejidad temporal sera O(1) o constante debido a que solo se agregaran valores a los vectores.
+Gracias a la funcion indexOf() se puede saber el indice o pocision de la llave. A partir de ello lo que se hace es agregar la llave y el valor pasados como parametro de la funcion sin importar si el espacio esta ocupado, ya que lo encadenara gracias al uso de vectores. Por lo que su complejidad temporal para el peor de los casos segun la literatura es O(n) o lineal, pero solo en caso de que la tabla hash se encuentra saturada, pero para la mayoria de los casos su complejidad temporal es O(1) o lineal, debido a que solo se agregaran valores y llaves a los vectores.
+
+## quadratic.h
+### put
+Gracias a la funcion indexOf() se puede saber el indice o pocision de la llave. A partir de ello lo que se hace es agregar la llave y el valor pasados como parametro de la funcion, y en caso de colision se movera al cuadraticamente a la siguiente posicion. Por lo que su complejidad temporal para el peor de los casos segun la literatura es O(n) o lineal, pero solo en caso de que la tabla hash se encuentra saturada, pero para la mayoria de los casos su complejidad temporal es O(1) o lineal, debido a que solo se agregaran valores y llaves a los indices de la tabla.
