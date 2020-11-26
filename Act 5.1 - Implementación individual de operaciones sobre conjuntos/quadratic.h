@@ -85,7 +85,7 @@ long Quadratic<Key, Value>::indexOf(const Key k) const {
 		if(keys[i] == k){
 			return i;
 		}
-		i = (start +j*j) % size;
+		i = (start + j * j) % size;
 	}
 	return -1;
 }
@@ -108,7 +108,7 @@ bool Quadratic<Key, Value>::put(Key k, Value v) {
 			values[i] = v;
 			return true;
 		}
-		i = (start + j*j) % size;
+		i = (start + j * j) % size;
 	}
 	return false;
 }
